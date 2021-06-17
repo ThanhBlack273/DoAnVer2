@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace caro
 {
-    class PlayeInfo
+    internal class PlayInfo
     {
         private Point point;
         private int currentPlayer;
@@ -15,12 +12,12 @@ namespace caro
         public int CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
         public Image Symbol { get => symbol; set => symbol = value; }
 
-        public PlayeInfo()
+        public PlayInfo()
         {
 
         }
 
-        public PlayeInfo(Point point, int currentPlayer, Image symbol)
+        public PlayInfo(Point point, int currentPlayer, Image symbol)
         {
             this.Point = point;
             this.CurrentPlayer = currentPlayer;
