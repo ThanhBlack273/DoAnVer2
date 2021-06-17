@@ -234,6 +234,7 @@ namespace caro
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Caro";
             this.Text = "Caro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Caro_FormClosing);
             this.Load += new System.EventHandler(this.Caro_Load);
             this.player1.ResumeLayout(false);
             this.player1.PerformLayout();
