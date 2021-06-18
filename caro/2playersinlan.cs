@@ -25,7 +25,9 @@ namespace caro
 
         private void back_Click(object sender, EventArgs e)
         {
-            Close();
+            menu menu = new menu();
+            menu.Show();
+            this.Hide();
         }
 
         private void connect_Click(object sender, EventArgs e)
@@ -33,6 +35,7 @@ namespace caro
             socket = new SocketManager();
             Caro caro = new Caro();
             caro.Show();
+            this.Hide();
             socket.IP = txbIP.Text;
             txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
             if (string.IsNullOrEmpty(txbIP.Text))

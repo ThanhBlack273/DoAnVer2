@@ -24,6 +24,7 @@ namespace caro
         {
             _2playersinlan _2playersinlan = new _2playersinlan();
             _2playersinlan.Show();
+            this.Hide();
 
         }
 
@@ -31,6 +32,14 @@ namespace caro
         {
             playcom player1 = new playcom();
             player1.Show();
+            this.Hide();
+        }
+
+        private void playvscom_Click(object sender, EventArgs e)
+        {
+            Caro playAI = new Caro();
+            playAI.Show();
+            this.Hide();
         }
     }
 }

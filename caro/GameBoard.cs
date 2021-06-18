@@ -23,7 +23,7 @@ namespace caro
         private event EventHandler gameOver;
 
         private Stack<PlayInfo> stkUndoStep;
-        //private Stack<PlayInfo> stkRedoStep;
+        private Stack<PlayInfo> stkRedoStep;
 
         //private int playMode = 0;
         //private bool IsAI = false;
@@ -82,11 +82,11 @@ namespace caro
             set { stkUndoStep = value; }
         }
 
-        //public Stack<PlayInfo> StkRedoStep
-        //{
-        //    get { return stkRedoStep; }
-        //    set { stkRedoStep = value; }
-        //}
+        public Stack<PlayInfo> StkRedoStep
+        {
+            get { return stkRedoStep; }
+            set { stkRedoStep = value; }
+        }
 
         //public int PlayMode
         //{
@@ -127,7 +127,7 @@ namespace caro
             board.Controls.Clear();
 
             StkUndoStep = new Stack<PlayInfo>();
-            //StkRedoStep = new Stack<PlayInfo>();
+            StkRedoStep = new Stack<PlayInfo>();
 
             this.CurrentPlayer = 0;
             ChangePlayer();
@@ -340,7 +340,6 @@ namespace caro
 
             return IsUndo1 && IsUndo2;
         }
-
         private bool UndoAStep()
         {
             if (StkUndoStep.Count <= 0)
@@ -361,9 +360,43 @@ namespace caro
 
             return true;
         }
-        
-        
-        
+        public bool Redo()
+        {
+            if (StkRedoStep.Count <=1)
+                return false;
+
+            PlayInfo OldPos = StkRedoStep.Peek();
+            CurrentPlayer = OldPos.CurrentPlayer;
+
+            bool IsRedo1 = RedoAStep();
+            bool IsRedo2 = RedoAStep();
+
+            return IsRedo1 && IsRedo2;
+        }
+
+        private bool RedoAStep()
+        {
+            if (StkRedoStep.Count <= 0)
+                return false;
+
+            PlayInfo OldPos = StkRedoStep.Pop();
+            StkUndoStep.Push(OldPos);
+
+            Button btn = MatrixPositions[OldPos.Point.Y][OldPos.Point.X];
+            btn.BackgroundImage = OldPos.Symbol;
+
+            if (StkRedoStep.Count <= 0)
+                CurrentPlayer = OldPos.CurrentPlayer == 1 ? 0 : 1;
+            else
+                OldPos = StkRedoStep.Peek();
+
+            ChangePlayer();
+
+            return true;
+        }
+
+
+
         #endregion
 
         #region 2 players

@@ -82,12 +82,33 @@ namespace caro
             //    socket.Send(new SocketData((int)SocketCommand.END_GAME, "", new Point()));
         }
 
+
+
+
+
         #endregion
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            menu menu = new menu();
+            menu.Show();
+            this.Hide();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            board.Undo();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            board.Redo();
+        }
 
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
     }
     
 }
