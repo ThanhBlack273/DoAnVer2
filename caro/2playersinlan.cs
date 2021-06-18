@@ -25,9 +25,9 @@ namespace caro
 
         private void back_Click(object sender, EventArgs e)
         {
+            this.Close();
             menu menu = new menu();
             menu.Show();
-            this.Hide();
         }
 
         private void connect_Click(object sender, EventArgs e)
@@ -36,61 +36,10 @@ namespace caro
             Caro caro = new Caro();
             caro.Show();
             this.Hide();
-            if (string.IsNullOrEmpty(txbIP.Text))
-            {
-                txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-            }
-            if (!socket.ConnectServer())
-            {
-                socket.CreateServer();
-
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-                MessageBox.Show("Bạn là server");
-            }
-            else
-            {
-                Thread listenThread = new Thread(() =>
-                {
-                    Listen();
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-
-                socket.Send("2 bạn đã kết nối!");
-            }
-
+           
         }
-        void Listen()
-        {
-            string data = (string)socket.Receive();
+      
 
-            MessageBox.Show(data);
-        }
-
-        private void _2playersinlan_Shown(object sender, EventArgs e)
-        {
-            txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-
-            if (string.IsNullOrEmpty(txbIP.Text))
-                txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-        }
     }
 }
 

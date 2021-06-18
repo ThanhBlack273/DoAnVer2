@@ -337,6 +337,7 @@ namespace caro
             this.Text = "Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Caro_FormClosing);
             this.Load += new System.EventHandler(this.Caro_Load);
+            this.Shown += new System.EventHandler(this.Caro_Shown);
             this.player1.ResumeLayout(false);
             this.player1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

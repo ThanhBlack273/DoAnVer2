@@ -135,7 +135,6 @@ namespace caro
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "_2playersinlan";
             this.Text = "Caro";
-            this.Shown += new System.EventHandler(this._2playersinlan_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

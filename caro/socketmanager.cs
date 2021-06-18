@@ -53,7 +53,7 @@ namespace socketmanager
         public string IP = "127.0.0.1";
         public int PORT = 9999;
         public const int BUFFER = 1024;
-        public bool isServer = true;
+        public bool IsServer = true;
 
         public bool Send(object data)
         {

@@ -17,16 +17,19 @@ namespace caro
 
         private void back_Click(object sender, EventArgs e)
         {
+            this.Close();
             menu menu = new menu();
             menu.Show();
-            this.Hide();
         }
 
         private void start_Click(object sender, EventArgs e)
         {
-            Caro caro = new Caro();
+            string yourname1 = textBox1.Text;
+            string yourname2 = textBox2.Text;
+            Caro caro = new Caro(yourname1,yourname2);
             caro.Show();
             this.Hide();
+
         }
     }
 }
