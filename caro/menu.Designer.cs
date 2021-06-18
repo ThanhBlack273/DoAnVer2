@@ -48,9 +48,10 @@ namespace caro
             this.twoplay.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.twoplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.twoplay.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.twoplay.Location = new System.Drawing.Point(150, 359);
+            this.twoplay.Location = new System.Drawing.Point(105, 215);
+            this.twoplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.twoplay.Name = "twoplay";
-            this.twoplay.Size = new System.Drawing.Size(300, 56);
+            this.twoplay.Size = new System.Drawing.Size(210, 34);
             this.twoplay.TabIndex = 0;
             this.twoplay.Text = "2 Players in LAN";
             this.twoplay.UseVisualStyleBackColor = false;
@@ -62,9 +63,10 @@ namespace caro
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::caro.Properties.Resources.pink1;
             this.pictureBox1.Image = global::caro.Properties.Resources.tic_tac_toe;
-            this.pictureBox1.Location = new System.Drawing.Point(140, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(98, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 320);
+            this.pictureBox1.Size = new System.Drawing.Size(224, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -77,9 +79,10 @@ namespace caro
             this.playcom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playcom.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.playcom.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.playcom.Location = new System.Drawing.Point(150, 421);
+            this.playcom.Location = new System.Drawing.Point(105, 253);
+            this.playcom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.playcom.Name = "playcom";
-            this.playcom.Size = new System.Drawing.Size(300, 56);
+            this.playcom.Size = new System.Drawing.Size(210, 34);
             this.playcom.TabIndex = 4;
             this.playcom.Text = "2 Players / Com";
             this.playcom.UseVisualStyleBackColor = false;
@@ -93,12 +96,14 @@ namespace caro
             this.playvscom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playvscom.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.playvscom.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.playvscom.Location = new System.Drawing.Point(150, 483);
+            this.playvscom.Location = new System.Drawing.Point(105, 290);
+            this.playvscom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.playvscom.Name = "playvscom";
-            this.playvscom.Size = new System.Drawing.Size(300, 56);
+            this.playvscom.Size = new System.Drawing.Size(210, 34);
             this.playvscom.TabIndex = 5;
             this.playvscom.Text = "Players vs Com";
             this.playvscom.UseVisualStyleBackColor = true;
+            this.playvscom.Click += new System.EventHandler(this.playvscom_Click);
             // 
             // exit
             // 
@@ -108,9 +113,10 @@ namespace caro
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exit.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.exit.Location = new System.Drawing.Point(150, 545);
+            this.exit.Location = new System.Drawing.Point(105, 327);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(300, 56);
+            this.exit.Size = new System.Drawing.Size(210, 34);
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
@@ -118,16 +124,17 @@ namespace caro
             // 
             // menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::caro.Properties.Resources.pink1;
-            this.ClientSize = new System.Drawing.Size(598, 624);
+            this.ClientSize = new System.Drawing.Size(419, 374);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.playvscom);
             this.Controls.Add(this.playcom);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.twoplay);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "menu";
             this.Text = "menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
