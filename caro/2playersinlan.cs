@@ -62,6 +62,7 @@ namespace caro
                 });
                 listenThread.IsBackground = true;
                 listenThread.Start();
+                MessageBox.Show("Bạn là server");
             }
             else
             {
@@ -72,7 +73,7 @@ namespace caro
                 listenThread.IsBackground = true;
                 listenThread.Start();
 
-                socket.Send("Thông tin từ Client");
+                socket.Send("2 bạn đã kết nối!");
             }
 
         }

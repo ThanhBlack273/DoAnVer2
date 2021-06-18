@@ -317,6 +317,7 @@ namespace caro
             this.hienchat.Location = new System.Drawing.Point(3, 3);
             this.hienchat.Multiline = true;
             this.hienchat.Name = "hienchat";
+            this.hienchat.ReadOnly = true;
             this.hienchat.Size = new System.Drawing.Size(208, 488);
             this.hienchat.TabIndex = 0;
             // 

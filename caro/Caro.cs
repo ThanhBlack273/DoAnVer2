@@ -62,6 +62,7 @@ namespace caro
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.Yes)
                 e.Cancel = true;
+            
             //else
             //{
             //    try
@@ -110,28 +111,11 @@ namespace caro
 
         private void send_Click(object sender, EventArgs e)
         {
-            hienchat.Text += "- " + "" + ": " + nhapchat.Text + "\r\n";
-            socket.Send(new SocketData((int)SocketCommand.SEND_MESSAGE, hienchat.Text, new Point()));
-            Listen();
+            
+           hienchat.Text += "- " + "" + ": " + nhapchat.Text + "\r\n";
+           nhapchat.Text = null;
+           socket.Send(new SocketData((int)SocketCommand.SEND_MESSAGE, hienchat.Text, new Point() ));
         }
-        private void Listen()
-        {
-            Thread ListenThread = new Thread(() =>
-            {
-                try
-                {
-                    SocketData data = (SocketData)socket.Receive();
-                    ProcessData(data);
-                }
-                catch { }
-            });
 
-            ListenThread.IsBackground = true;
-            ListenThread.Start();
-        }
-        private void ProcessData(SocketData data)
-        {
-           hienchat.Text = data.Message;
-        }
     }
 }
