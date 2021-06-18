@@ -25,9 +25,9 @@ namespace caro
 
         private void back_Click(object sender, EventArgs e)
         {
+            this.Close();
             menu menu = new menu();
             menu.Show();
-            this.Hide();
         }
 
         private void connect_Click(object sender, EventArgs e)

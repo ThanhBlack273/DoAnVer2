@@ -7,7 +7,7 @@ using socketmanager;
 
 namespace caro
 {
-
+    
     public partial class Caro : Form
     {
         #region Properties
@@ -21,10 +21,19 @@ namespace caro
             socket = new SocketManager();
             //board.PlayerClicked += Board_PlayerClicked;
             NewGame();
-
         }
         #endregion
-
+        public Caro(string yourname1, string yourname2)
+        {
+            InitializeComponent();
+            label1.Text = yourname1;
+            label2.Text = yourname2;
+            board = new GameBoard(banco);
+            board.GameOver += Board_GameOver;
+            socket = new SocketManager();
+            //board.PlayerClicked += Board_PlayerClicked;
+            NewGame();
+        }
 
         #region Methods
         void NewGame()
@@ -89,9 +98,9 @@ namespace caro
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Close();
             menu menu = new menu();
             menu.Show();
-            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
