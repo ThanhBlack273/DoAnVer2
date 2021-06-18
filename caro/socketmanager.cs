@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace socketmanager
 {
@@ -42,13 +38,13 @@ namespace socketmanager
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             server.Bind(iep);
-            server.Listen(10);
+            server.Listen(10);// Đợi kết nối client trong 10s nếu ko có thì bỏ
 
             Thread acceptClient = new Thread(() =>
             {
                 client = server.Accept();
             });
-            acceptClient.IsBackground = true;
+            acceptClient.IsBackground = true;// Để khi chương trình tắt ngang thì Thread cũng tự tắt
             acceptClient.Start();
         }
         #endregion
@@ -68,21 +64,20 @@ namespace socketmanager
 
         public object Receive()
         {
-            byte[] receiveData = new byte[BUFFER];
+            byte[] receiveData = new byte[BUFFER];// 1 lần nhận tin là cỡ bao nhiêu
             bool isOk = ReceiveData(client, receiveData);
-
             return DeserializeData(receiveData);
         }
 
         private bool SendData(Socket target, byte[] data)
         {
-            return target.Send(data) == 1 ? true : false;
+                return target.Send(data) == 1 ;
         }
 
 
         private bool ReceiveData(Socket target, byte[] data)
         {
-            return target.Receive(data) == 1 ? true : false;
+            return target.Receive(data) == 1 ;
         }
         /// <summary>
         /// Nén đối tượng thành mảng byte[]

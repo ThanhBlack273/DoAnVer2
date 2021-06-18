@@ -39,16 +39,16 @@ namespace socketdata
             this.Command = command;
             this.Point = point;
             this.Message = message;
-        }
+        }   
     }
 
     public enum SocketCommand
     {
         SEND_POINT,
-        NOTIFY,
         NEW_GAME,
         UNDO,
         END_GAME,
-        QUIT
+        QUIT,
+        SEND_MESSAGE
     }
 }

@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using socketdata;
+using socketmanager;
 
 namespace caro
 {
-    
+
     public partial class Caro : Form
     {
         #region Properties
         GameBoard board;
+        SocketManager socket;
         public Caro()
         {
             InitializeComponent();
             board = new GameBoard(banco);
             board.GameOver += Board_GameOver;
-
+            socket = new SocketManager();
             //board.PlayerClicked += Board_PlayerClicked;
             NewGame();
 
@@ -109,6 +107,31 @@ namespace caro
         {
             NewGame();
         }
+
+        private void send_Click(object sender, EventArgs e)
+        {
+            hienchat.Text += "- " + "" + ": " + nhapchat.Text + "\r\n";
+            socket.Send(new SocketData((int)SocketCommand.SEND_MESSAGE, hienchat.Text, new Point()));
+            Listen();
+        }
+        private void Listen()
+        {
+            Thread ListenThread = new Thread(() =>
+            {
+                try
+                {
+                    SocketData data = (SocketData)socket.Receive();
+                    ProcessData(data);
+                }
+                catch { }
+            });
+
+            ListenThread.IsBackground = true;
+            ListenThread.Start();
+        }
+        private void ProcessData(SocketData data)
+        {
+           hienchat.Text = data.Message;
+        }
     }
-    
 }

@@ -36,8 +36,6 @@ namespace caro
             Caro caro = new Caro();
             caro.Show();
             this.Hide();
-            socket.IP = txbIP.Text;
-            txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
             if (string.IsNullOrEmpty(txbIP.Text))
             {
                 txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
@@ -83,6 +81,14 @@ namespace caro
             string data = (string)socket.Receive();
 
             MessageBox.Show(data);
+        }
+
+        private void _2playersinlan_Shown(object sender, EventArgs e)
+        {
+            txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+
+            if (string.IsNullOrEmpty(txbIP.Text))
+                txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
         }
     }
 }
