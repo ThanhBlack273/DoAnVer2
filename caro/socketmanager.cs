@@ -128,7 +128,16 @@ namespace socketmanager
             }
             return output;
         }
+        public void CloseConnect()
+        {
+            try
+            {
+                server.Close();
+                client.Close();
+            }
+            catch { }
 
+        }
         #endregion
     }
 }

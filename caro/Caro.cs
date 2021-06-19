@@ -8,7 +8,7 @@ using System.Net.NetworkInformation;
 
 namespace caro
 {
-
+    
     public partial class Caro : Form
     {
         #region Properties
@@ -24,7 +24,6 @@ namespace caro
             NewGame();
         }
         #endregion
-        string IP;
         public Caro(string yourname1, string yourname2)
         {
             InitializeComponent();
@@ -36,14 +35,12 @@ namespace caro
             //board.PlayerClicked += Board_PlayerClicked;
             NewGame();
         }
+
+        string IP;
         public Caro(string soip)
         {
             InitializeComponent();
-            board = new GameBoard(banco);
-            board.GameOver += Board_GameOver;
-            socket = new SocketManager();
-            //board.PlayerClicked += Board_PlayerClicked;
-            this.IP = soip;
+               this.IP = soip;
         }
 
         #region Methods
@@ -74,20 +71,7 @@ namespace caro
 
         private void Caro_Load(object sender, EventArgs e)
         {
-            socket.IP = IP;
 
-            if (!socket.ConnectServer())
-            {
-                socket.IsServer = true;
-                socket.CreateServer();
-                MessageBox.Show("Bạn đang là Server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                socket.IsServer = false;
-                nghe();
-                MessageBox.Show("Kết nối thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
         }
 
@@ -122,6 +106,7 @@ namespace caro
 
         private void button3_Click(object sender, EventArgs e)
         {
+            socket.CloseConnect();
             this.Close();
             menu menu = new menu();
             menu.Show();
@@ -144,26 +129,21 @@ namespace caro
 
         private void send_Click(object sender, EventArgs e)
         {
-
             hienchat.Text += "- " + "" + ": " + nhapchat.Text + "\r\n";
             nhapchat.Text = null;
             socket.Send(new SocketData((int)SocketCommand.SEND_MESSAGE, hienchat.Text, new Point()));
             nghe();
         }
-
        
         private void nghe()
         {
             Thread ListenThread = new Thread(() =>
             {
-                try
-                {
-                    SocketData data = (SocketData)socket.Receive();
-                    ProcessData(data);
-                }
-                catch { }
-            });
 
+                SocketData data = (SocketData)socket.Receive();
+                ProcessData(data);
+
+            });
             ListenThread.IsBackground = true;
             ListenThread.Start();
 
