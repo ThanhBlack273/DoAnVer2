@@ -8,7 +8,7 @@ using System.Net.NetworkInformation;
 
 namespace caro
 {
-
+    
     public partial class Caro : Form
     {
         #region Properties
@@ -24,6 +24,18 @@ namespace caro
             NewGame();
         }
         #endregion
+        public Caro(string yourname1, string yourname2)
+        {
+            InitializeComponent();
+            label1.Text = yourname1;
+            label2.Text = yourname2;
+            board = new GameBoard(banco);
+            board.GameOver += Board_GameOver;
+            socket = new SocketManager();
+            //board.PlayerClicked += Board_PlayerClicked;
+            NewGame();
+        }
+
         string IP;
         public Caro(string yourname1, string yourname2)
         {
