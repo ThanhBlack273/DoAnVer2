@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using socketmanager;
 using System.Threading;
+using socketdata;
 
 namespace caro
 {
@@ -28,50 +29,30 @@ namespace caro
             caro.Show();
             this.Hide();
             socket.IP = txbIP.Text;
-
             if (!socket.ConnectServer())
             {
+                socket.IsServer = true;
                 socket.CreateServer();
-
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
+                MessageBox.Show("Bạn đang là Server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Thread listenThread = new Thread(() =>
-                {
-                    Listen();
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
+                socket.IsServer = false;
+                Listen();
+                MessageBox.Show("Kết nối thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                socket.Send("Thông tin từ Client");
             }
         }
-        void Listen()
+        private void Listen()
         {
-            string data = (string)socket.Receive();
+            Thread ListenThread = new Thread(() =>
+            {
+                SocketData data = (SocketData)socket.Receive();
+            });
+            ListenThread.IsBackground = true;
+            ListenThread.Start();
 
-            MessageBox.Show(data);
         }
-
-
     }
 }
 

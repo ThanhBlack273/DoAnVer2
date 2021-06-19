@@ -24,10 +24,7 @@ namespace caro
             NewGame();
         }
         #endregion
-<<<<<<<<< Temporary merge branch 1
-=========
-        string IP;
->>>>>>>>> Temporary merge branch 2
+
         public Caro(string yourname1, string yourname2)
         {
             InitializeComponent();
@@ -39,8 +36,8 @@ namespace caro
             //board.PlayerClicked += Board_PlayerClicked;
             NewGame();
         }
-<<<<<<<<< Temporary merge branch 1
-=========
+        string IP;
+
         public Caro(string soip)
         {
             InitializeComponent();
@@ -75,8 +72,6 @@ namespace caro
 
         private void Caro_Load(object sender, EventArgs e)
         {
-
-
         }
 
         private void Caro_FormClosing(object sender, FormClosingEventArgs e)
