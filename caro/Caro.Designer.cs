@@ -32,8 +32,6 @@ namespace caro
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caro));
             this.player1 = new System.Windows.Forms.Panel();
-            this.txt_IP = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -74,8 +72,6 @@ namespace caro
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player1.BackColor = System.Drawing.Color.White;
             this.player1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player1.BackgroundImage")));
-            this.player1.Controls.Add(this.txt_IP);
-            this.player1.Controls.Add(this.button5);
             this.player1.Controls.Add(this.textBox1);
             this.player1.Controls.Add(this.label1);
             this.player1.Controls.Add(this.pictureBox3);
@@ -85,24 +81,6 @@ namespace caro
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(216, 188);
             this.player1.TabIndex = 0;
-            // 
-            // txt_IP
-            // 
-            this.txt_IP.Location = new System.Drawing.Point(0, 55);
-            this.txt_IP.Name = "txt_IP";
-            this.txt_IP.Size = new System.Drawing.Size(125, 27);
-            this.txt_IP.TabIndex = 6;
-            this.txt_IP.Text = "127.0.0.1";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(12, 20);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 29);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "lan";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
@@ -358,6 +336,7 @@ namespace caro
             this.Name = "Caro";
             this.Text = "Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Caro_FormClosing);
+            this.Load += new System.EventHandler(this.Caro_Load);
             this.Shown += new System.EventHandler(this.Caro_Shown);
             this.player1.ResumeLayout(false);
             this.player1.PerformLayout();
@@ -400,8 +379,6 @@ namespace caro
         private System.Windows.Forms.TextBox hienchat;
         private System.Windows.Forms.TextBox nhapchat;
         private System.Windows.Forms.Button send;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txt_IP;
     }
 }
 

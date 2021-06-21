@@ -14,6 +14,7 @@ namespace caro
         #region Properties
         GameBoard board;
         SocketManager socket;
+        string IP = "127.0.0.1";
         public Caro()
         {
             InitializeComponent();
@@ -84,11 +85,6 @@ namespace caro
             //if (board.PlayMode == 1)
             //    socket.Send(new SocketData((int)SocketCommand.END_GAME, "", new Point()));
         }
-
-
-
-
-
         #endregion
 
         private void button3_Click(object sender, EventArgs e)
@@ -210,15 +206,15 @@ namespace caro
 
         private void Caro_Shown(object sender, EventArgs e)
         {
-            txt_IP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+            IP = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
 
-            if (string.IsNullOrEmpty(txt_IP.Text))
-                txt_IP.Text  = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            if (string.IsNullOrEmpty(IP))
+               IP = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Caro_Load(object sender, EventArgs e)
         {
-            socket.IP = txt_IP.Text;
+            socket.IP = IP;
             if (!socket.ConnectServer())
             {
                 socket.IsServer = true;
@@ -231,9 +227,8 @@ namespace caro
                 Listen();
                 MessageBox.Show("Kết nối thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-        }
-        private void Listen()
+    }
+    private void Listen()
         {
             Thread ListenThread = new Thread(() =>
             {
