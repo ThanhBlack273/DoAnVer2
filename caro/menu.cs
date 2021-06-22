@@ -37,8 +37,8 @@ namespace caro
 
         private void playvscom_Click(object sender, EventArgs e)
         {
-            Caro playAI = new Caro();
-            playAI.Show();
+            playAI PlayAI = new playAI();
+            PlayAI.Show();
             this.Hide();
         }
     }

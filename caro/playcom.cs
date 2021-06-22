@@ -26,7 +26,8 @@ namespace caro
         {
             string yourname1 = textBox1.Text;
             string yourname2 = textBox2.Text;
-            Caro caro = new Caro(yourname1,yourname2);
+            int mod = 2;
+            Caro caro = new Caro(yourname1,yourname2, mod);
             caro.Show();
             this.Hide();
 

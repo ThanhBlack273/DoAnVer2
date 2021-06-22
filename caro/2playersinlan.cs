@@ -22,7 +22,10 @@ namespace caro
 
         private void connect_Click(object sender, EventArgs e)
         {
-            Caro caro = new Caro();
+            string name = tbName.Text;
+            string ip = txbIP.Text;
+            int mod = 1;
+            Caro caro = new Caro(name, ip, mod);
             caro.Show();
             this.Hide();
         }
