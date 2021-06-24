@@ -104,9 +104,7 @@ namespace caro
         #region Button
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
-            menu menu = new menu();
-            menu.Show();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)

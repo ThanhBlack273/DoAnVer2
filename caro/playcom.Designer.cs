@@ -35,7 +35,6 @@ namespace caro
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rule = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -47,9 +46,10 @@ namespace caro
             this.back.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.back.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.back.Location = new System.Drawing.Point(323, 296);
+            this.back.Location = new System.Drawing.Point(60, 206);
+            this.back.Margin = new System.Windows.Forms.Padding(2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(178, 60);
+            this.back.Size = new System.Drawing.Size(175, 50);
             this.back.TabIndex = 12;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = false;
@@ -59,12 +59,13 @@ namespace caro
             // 
             this.start.BackColor = System.Drawing.Color.PowderBlue;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.start.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.start.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.start.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.start.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.start.Location = new System.Drawing.Point(202, 213);
+            this.start.Location = new System.Drawing.Point(327, 206);
+            this.start.Margin = new System.Windows.Forms.Padding(2);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(178, 60);
+            this.start.Size = new System.Drawing.Size(175, 50);
             this.start.TabIndex = 11;
             this.start.Text = "Start Game";
             this.start.UseVisualStyleBackColor = false;
@@ -72,77 +73,70 @@ namespace caro
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(128, 95);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(146, 90);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 39);
+            this.textBox1.Size = new System.Drawing.Size(324, 32);
             this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "Yourname1";
+            this.textBox1.Text = "Player1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Image = global::caro.Properties.Resources.pink1;
-            this.label2.Location = new System.Drawing.Point(26, 98);
+            this.label2.Location = new System.Drawing.Point(21, 93);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 32);
+            this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Player1:";
+            this.label2.Text = "Your Name 1:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(115, 9);
+            this.label1.Location = new System.Drawing.Point(160, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(386, 67);
+            this.label1.Size = new System.Drawing.Size(261, 46);
             this.label1.TabIndex = 8;
             this.label1.Text = "2 Players / Com";
             // 
-            // rule
-            // 
-            this.rule.BackColor = System.Drawing.Color.PowderBlue;
-            this.rule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rule.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rule.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rule.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.rule.Location = new System.Drawing.Point(85, 296);
-            this.rule.Name = "rule";
-            this.rule.Size = new System.Drawing.Size(178, 60);
-            this.rule.TabIndex = 7;
-            this.rule.Text = "Rule";
-            this.rule.UseVisualStyleBackColor = false;
-            // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(128, 150);
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(146, 140);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 39);
+            this.textBox2.Size = new System.Drawing.Size(324, 32);
             this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "Yourname2";
+            this.textBox2.Text = "Player2";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Image = global::caro.Properties.Resources.pink1;
-            this.label3.Location = new System.Drawing.Point(26, 153);
+            this.label3.Location = new System.Drawing.Point(21, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 32);
+            this.label3.Size = new System.Drawing.Size(124, 25);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Player2:";
+            this.label3.Text = "Your Name 2:";
             // 
             // playcom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::caro.Properties.Resources.pink1;
-            this.ClientSize = new System.Drawing.Size(578, 394);
+            this.ClientSize = new System.Drawing.Size(564, 311);
             this.ControlBox = false;
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -151,14 +145,15 @@ namespace caro
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rule);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(580, 350);
+            this.MinimumSize = new System.Drawing.Size(580, 350);
             this.Name = "playcom";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "playcom";
+            this.Text = "Caro";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +166,6 @@ namespace caro
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button rule;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
     }

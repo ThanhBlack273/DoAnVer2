@@ -30,7 +30,6 @@ namespace caro
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_2playersinlan));
-            this.rule = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txbIP = new System.Windows.Forms.TextBox();
@@ -40,28 +39,13 @@ namespace caro
             this.tbName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // rule
-            // 
-            this.rule.BackColor = System.Drawing.Color.PowderBlue;
-            this.rule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rule.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rule.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rule.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.rule.Location = new System.Drawing.Point(65, 202);
-            this.rule.Margin = new System.Windows.Forms.Padding(2);
-            this.rule.Name = "rule";
-            this.rule.Size = new System.Drawing.Size(124, 36);
-            this.rule.TabIndex = 1;
-            this.rule.Text = "Rule";
-            this.rule.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Image = global::caro.Properties.Resources.pink1;
-            this.label1.Location = new System.Drawing.Point(65, 11);
+            this.label1.Location = new System.Drawing.Point(160, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 46);
@@ -73,7 +57,7 @@ namespace caro
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Image = global::caro.Properties.Resources.pink1;
-            this.label2.Location = new System.Drawing.Point(16, 104);
+            this.label2.Location = new System.Drawing.Point(98, 143);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 25);
@@ -83,10 +67,10 @@ namespace caro
             // txbIP
             // 
             this.txbIP.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbIP.Location = new System.Drawing.Point(52, 102);
+            this.txbIP.Location = new System.Drawing.Point(146, 140);
             this.txbIP.Margin = new System.Windows.Forms.Padding(2);
             this.txbIP.Name = "txbIP";
-            this.txbIP.Size = new System.Drawing.Size(307, 32);
+            this.txbIP.Size = new System.Drawing.Size(324, 32);
             this.txbIP.TabIndex = 4;
             this.txbIP.Text = "127.0.0.1";
             this.txbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -95,13 +79,13 @@ namespace caro
             // 
             this.connect.BackColor = System.Drawing.Color.PowderBlue;
             this.connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.connect.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.connect.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.connect.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.connect.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.connect.Location = new System.Drawing.Point(148, 147);
+            this.connect.Location = new System.Drawing.Point(327, 206);
             this.connect.Margin = new System.Windows.Forms.Padding(2);
             this.connect.Name = "connect";
-            this.connect.Size = new System.Drawing.Size(124, 36);
+            this.connect.Size = new System.Drawing.Size(175, 50);
             this.connect.TabIndex = 5;
             this.connect.Text = "Connect";
             this.connect.UseVisualStyleBackColor = false;
@@ -114,10 +98,10 @@ namespace caro
             this.back.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.back.Image = global::caro.Properties.Resources.d1dcfb___Pale_Lavender_Color_Image___Schemecolor;
-            this.back.Location = new System.Drawing.Point(231, 202);
+            this.back.Location = new System.Drawing.Point(60, 206);
             this.back.Margin = new System.Windows.Forms.Padding(2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(124, 36);
+            this.back.Size = new System.Drawing.Size(175, 50);
             this.back.TabIndex = 6;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = false;
@@ -128,7 +112,7 @@ namespace caro
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Image = global::caro.Properties.Resources.pink1;
-            this.label3.Location = new System.Drawing.Point(-3, 69);
+            this.label3.Location = new System.Drawing.Point(21, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 25);
@@ -138,10 +122,10 @@ namespace caro
             // tbName
             // 
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbName.Location = new System.Drawing.Point(52, 66);
+            this.tbName.Location = new System.Drawing.Point(146, 90);
             this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(307, 32);
+            this.tbName.Size = new System.Drawing.Size(324, 32);
             this.tbName.TabIndex = 4;
             this.tbName.Text = "Player";
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -151,7 +135,7 @@ namespace caro
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::caro.Properties.Resources.pink1;
-            this.ClientSize = new System.Drawing.Size(473, 302);
+            this.ClientSize = new System.Drawing.Size(564, 311);
             this.Controls.Add(this.back);
             this.Controls.Add(this.connect);
             this.Controls.Add(this.tbName);
@@ -159,9 +143,11 @@ namespace caro
             this.Controls.Add(this.txbIP);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rule);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(580, 350);
+            this.MinimumSize = new System.Drawing.Size(580, 350);
             this.Name = "_2playersinlan";
             this.Text = "Caro";
             this.ResumeLayout(false);
@@ -170,8 +156,6 @@ namespace caro
         }
 
         #endregion
-
-        private System.Windows.Forms.Button rule;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbIP;
